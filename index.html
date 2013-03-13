@@ -1,0 +1,107 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href='css/home.css' rel='stylesheet' type='text/css'>
+		<link href='css/calendar.css' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" language="javascript" src="js/style.js"></script>
+		<script type="text/javascript" language="javascript" src="js/calendar.js"></script>
+		<script type="text/javascript" language="javascript" src="js/form.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title> Nama Situs - Home </title>
+	</head>
+	<body>
+		<!-- Web Header -->
+		<header>
+			<div id="header_container"> 
+				<div class="left">
+					<a href="index.html"><img src="img/logo.png" alt="logo" height="80%;"/></a>
+				</div>
+				<div class="right">
+					<div class="thin_line"></div>
+					<div class="about">
+						<a href="about.html">About</a>
+					</div>
+					<div class="thin_line"></div>
+					<div class="contact">
+						<a href="contact.html">Contact</a>	
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Web Content -->
+		<div id="content_container">
+				<div class="homeimage">
+					<img src="img/home.jpeg" alt="logo" />
+				</div>
+				<div class="homecontent">
+					<div class="content">
+						<span class="contenttitle">WELCOME</span>
+						<br>
+						Selamat datang di situs "Nama Situs", silahkan login jika sudah mempunyai akun atau anda dapat mendaftar terlebih dahulu. Gratis !
+					</div>
+					<div class="contentbutton">
+						<div class="loginbtn">
+							<a href="#overlay" class="button" onclick="ShowBlack()">Login</a>
+						</div>
+						<div class="atau">
+							atau
+						</div>
+						<div class="signupbtn">
+							<a href="#overlay2" class="button" onclick="ShowBlack()">Sign Up</a>
+						</div>
+					</div>
+				</div>
+		</div>
+		<!-- Web Footer -->
+		<div class="footer">
+			Copyright Nama Tim 2013
+		</div>
+		<!-- Login and Signup-->
+		<div id="overlay">
+			<div id="loginform">
+				<a href="" onclick=""> Close </a>
+				<form class="login" name="loginform" method=POST>
+					<label>Username</label>
+					<input type="text" name="username" class="logininput" tabindex="1" required>
+					<br>
+					<br>
+					<label>Password</label>
+					<input type="password" name="password" class="logininput" tabindex="2" required>
+					<br>
+					<br>
+					<button tabindex="3" class="button">Login</button>
+				</form>
+			</div>
+		</div>
+		<div id="overlay2">
+			<div id="registrationform">
+				<a href="" onclick=""> Close </a>
+				<div class="registration1">
+					<br>
+					<form class="registration" name="registrasi">
+					Username:<br>
+					<input type="text" class="registrationinput" onchange="validateUsername(registrasi);disable(registrasi)" size=20 name="username"><label id="errorMsgUsername"></label><br>
+					Password:<br>
+					<input type="password" class="registrationinput" onchange="validatePassword(registrasi);disable(registrasi)" size=20 name="password"><label id="errorMsgPassword"></label><br>
+					Confirm Password:<br>
+					<input type="password" class="registrationinput" onchange="confirmPassword(registrasi);disable(registrasi)" size=20 name="cnfpassword"><label id="errorMsgCnfPassword"></label><br>
+					Nama Lengkap:<br>
+					<input type="text" class="registrationinput" onchange="validateNama(registrasi);disable(registrasi)" size=20 name="nama"><label id="errorMsgNama"></label><br>
+					Tanggal Lahir:<br>
+					<input size=20 class="registrationinput" name="tanggal" onchange="validateTanggal(registrasi)" id="tanggal"><label id="errorMsgTanggal"></label><br>
+					<script type="text/javascript">
+						calendar.set("tanggal");
+					</script>
+					Email:<br>
+					<input type="text" onchange="validateEmail(registrasi);disable(registrasi)" size=20 name="email"><label id="errorMsgEmail"></label><br>
+					Upload Avatar:<br>
+					<input type="file" name="file" onchange="Checkfiles()" id="filename"><label id="errorMsgAvatar"></label><br><br><br>
+					<button class="button" id="submit" disabled>Register</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

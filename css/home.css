@@ -1,0 +1,347 @@
+ html {width:100%; height:100%; overflow-x:hidden; font-family:Segoe UI; font-weight: lighter;}
+body {width:100%; height:300px; display:block; margin:0px; background-color:#f7f7f7;}
+
+/* HEADER SECTION 
+------------------------------------------------------------------------------------------- */
+header {
+	width:100%;
+	height:80px;
+	background-color:#a72323;
+	font-family:Segoe UI;
+	font-weight:lighter;
+	display:block;
+}
+#header_container {
+	width:100%; 
+	height:100%;
+	display:block;
+}
+.left {
+	width: 15%;
+}
+.right{
+	width:85%;
+	padding-top:18px;
+}
+.about{
+	width:100px;
+	float:left;
+	text-align:center;
+	padding-top:10px;
+}
+.contact{
+	width:100px;
+	float:left;
+	text-align:center;
+	padding-top:10px;
+}
+.searchbox{
+	margin-left:500px;
+	float:left;
+	width:160px;
+}
+#search input {
+	outline:none;
+	background-color: #fcfcfc;
+	border: none;
+	font-size: 14px Arial;
+	color: #bebebe;
+	width: 150px;
+	padding: 6px 10px 6px 25px;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	margin-right:10px;
+	margin-top:5px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15) inset;
+	-webkit-appearance:none;
+}
+.profile{
+	margin-left:50px;
+	float:left;	
+	width:200px;
+}
+.profileavatar{
+	width:30%;
+	float:left;
+}
+.profilename{
+	width:60%;
+	float:left;
+	color:white;
+	margin-left:20px;
+	margin-top:20px;
+	font-weight:bold;
+	font-size:12px;
+}
+a{
+	color:white;
+}
+.thin_line {display:block;height:50px;margin-left:0px;width:2px;background-color:#cac9c9;float:left;}
+/* HOME 
+------------------------------------------------------------------------------------------ */
+#content_container{
+	margin-top:100px;
+}
+.homeimage{
+	width:600px;
+	float:left;
+	padding-left:100px;
+	padding-right:100px;
+}
+.homecontent{
+	padding-top:50px;
+	width:500px;
+	float:left;
+}
+.content{
+	font-size:18px;
+	text-align:center;
+	font-family:Segoe UI;
+}
+.contenttitle{
+	font-family:Monotype Corsiva;
+	font-size:36px;
+}
+.contentbutton{
+	margin-top:50px;
+}
+.atau{
+	font-family:Segoe UI;
+	font-size:18px;
+	width:200px;
+	float:left;
+	text-align:center;
+}
+.loginbtn{
+	float:left;
+	padding-left:10%;
+}
+.signupbtn{
+	padding-right:10%;
+	float:right;
+}
+.button {
+	-moz-box-shadow:inset 0px 3px 10px -5px #bbdaf7;
+	-webkit-box-shadow:inset 0px 3px 10px -5px #bbdaf7;
+	box-shadow:inset 0px 3px 10px -5px #bbdaf7;
+	background-color:#79bbff;
+	-moz-border-radius:14px;
+	-webkit-border-radius:14px;
+	border-radius:14px;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:8px 23px;
+	text-decoration:none;
+	text-shadow:1px 0px 12px #528ecc;
+}.button:hover {
+	background-color:#378de5;
+}.button:active {
+	position:relative;
+	top:1px;
+}
+/* FOOTER
+--------------------------------------------------------------------------------------------------------------------- */
+.footer{
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	padding: 8px;
+	text-align: center;
+	height:20px;
+	background-color:#a72323;
+	font-family:Segoe UI;
+	font-weight:lighter;
+	color:white;
+	display:block;
+}
+/* STYLING 
+--------------------------------------------------------------------------------------------------------------------- */
+.bold {font-weight:bold;}
+.clear {clear:both;}
+.left {float:left;}
+.right {float:right;}
+.top10 {margin-top:10px;}
+.top20 {margin-top:20px;}
+.top30 {margin-top:30px;}
+.top45 {margin-top:45px;}
+.top30 {margin-top:30px;}
+.line10 {line-height:50%;}
+a {text-decoration:none;}
+.gray{color:#999999;}
+
+/* LOGIN AND SIGNUP
+--------------------------------------------------------------------------------------------------------------------- */
+#black {
+	background-color: #000000;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	visibility: hidden;
+}
+
+#loginform {
+	background-color: #E0E0E0;
+	padding: 5px;
+	position: relative;
+	top: 20%;
+	margin: 0 auto;
+	width: 400px;
+	height: 300px;
+	border-radius: 10px;
+}
+#overlay:target > #loginform {
+	animation:fadein 500ms ease;
+	-webkit-animation:fadein 500ms ease;
+	-moz-animation:fadein 500ms ease;
+}
+
+#overlay {
+	background-color: #000000;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	visibility: hidden;
+}
+
+#overlay:target {
+	visibility: visible;
+}
+
+#loginform a {
+	text-decoration: none;
+	color: #222222;
+	font-weight: bold;
+	float: right;
+}
+
+.login {
+	margin: 26px;
+	padding: 26px;
+}
+
+.login label {
+	font-size: 25px;
+}
+
+.logininput {
+	font-size: 25px;
+	padding-left: 10px;
+}
+
+.input {
+	padding-left: 5px;
+}
+
+#registrationform {
+	background-color: #E0E0E0;
+	padding: 5px;
+	position: relative;
+	margin: 2% auto;
+	width: 400px;
+	height: auto;
+	border-radius: 10px;
+}
+#overlay2:target > #registrationform {
+	animation:fadein 500ms ease;
+	-webkit-animation:fadein 500ms ease;
+	-moz-animation:fadein 500ms ease;
+}
+
+#overlay2 {
+	background-color: #000000;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: 0.9;
+	visibility: hidden;
+}
+
+#overlay2:target {
+	visibility: visible;
+}
+
+#registrationform a {
+	text-decoration: none;
+	color: #222222;
+	font-weight: bold;
+	float: right;
+}
+
+.registration {
+	margin: 26px;
+	padding: 26px;
+}
+
+.registration label {
+	color:red;
+}
+
+.registrationinput {
+	font-size: 25px;
+	padding-left: 10px;
+}
+
+.input {
+	padding-left: 5px;
+}
+
+#loginbutton {
+	font-size: 20px;
+	color: #FFFFFF;
+	padding: 7px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	
+	background-image: linear-gradient(top, rgb(120,120,120) 0%, rgb(0,0,0) 100%);
+	background-image: -moz-linear-gradient(top, rgb(120,120,120) 0%, rgb(0,0,0) 100%);
+	background-image: -webkit-linear-gradient(top, rgb(120,120,120) 0%, rgb(0,0,0) 100%);
+}
+@keyframes fadein {
+	from {
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes fadein {
+	from {
+		-webkit-transform: scale(0.5);
+		opacity: 0;
+	}
+	to {
+		-webkit-transform: scale(1);
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes fadein {
+	from {
+		-moz-transform: scale(0.5);
+		opacity: 0;
+	}
+	to {
+		-moz-transform: scale(1);
+		opacity: 1;
+	}
+}
