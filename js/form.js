@@ -163,3 +163,74 @@ function Done()
 	document.getElementById('savechange').disabled=true;
 	document.getElementById('taskbtn').disabled=false;
 }
+function checkUsername(username)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("errorMsgUsername2").innerHTML=xmlhttp.responseText;
+  }
+ }
+xmlhttp.open("POST","checkUsername.php",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("q="+username);
+}
+function checkEmail(email)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("errorMsgEmail2").innerHTML=xmlhttp.responseText;
+  }
+ }
+xmlhttp.open("POST","checkEmail.php",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("q="+email);
+}
+
+function checkLogin(form)
+{
+var xmlhttp;
+if (window.XMLHttpRequest)
+  {// code for IE7+, Firefox, Chrome, Opera, Safari
+  xmlhttp=new XMLHttpRequest();
+  }
+else
+  {// code for IE6, IE5
+  xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+xmlhttp.onreadystatechange=function()
+  {
+  if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    {
+    document.getElementById("checkLogin").innerHTML=xmlhttp.responseText;
+	if (document.getElementById("checkLogin").innerHTML.trim()=="")
+	{
+		window.location.href="dashboard.php";
+	}
+  }
+ }
+xmlhttp.open("POST","checkLogin.php",true);
+xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+xmlhttp.send("user="+form.username.value+"&pass="+form.password.value);
+}

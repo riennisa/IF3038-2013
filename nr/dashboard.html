@@ -1,0 +1,171 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<link href='css/style.css' rel='stylesheet' type='text/css'>
+		<script type="text/javascript" src="js/animation.js"> </script> 
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+		<title> Template </title>
+	</head>
+	<body>
+		<!-- Web Header -->
+		<header>
+			<div id="header_container"> 
+				<div class="left">
+					<a href="index.html"><img src="img/logo.png" alt="logo" height="80%;"/></a>
+				</div>
+				<div class="right">
+					<div class="thin_line"></div>
+					<div class="dashboard">
+						<a href="dashboard.html">Dashboard</a>
+					</div>
+					<div class="thin_line"></div>
+					<div class="about">
+						<a href="about.html">About</a>
+					</div>
+					<div class="thin_line"></div>
+					<div class="contact">
+						<a href="contact.html">Contact</a>	
+					</div>
+					<div class="searchbox">
+						<form method="get" action="" id="search">
+							<input type="text" placeholder="Search..." />
+						</form>
+					</div>
+					<div class="profile">
+						<a href="#">
+						<div class="profileavatar">
+							<img src="img/avatar.jpg" alt="logo"/>
+						</div>
+						<div class="profilename">
+							Zulhendra Valiant
+						</div>
+						</a>
+					</div>
+					<div class="logout">
+						<a href="index.html"><img src="img/logout.png"></a>	
+					</div>
+				</div>
+			</div>
+		</header>
+		
+		<!-- Web Content -->
+		<div id="content_container">
+			<div id="sidebar">
+				<div><button id="AllCat" class="catButton" type="button" onclick="showAll();select(this)"> All Categories </button></div>
+				<div><button id="Kuliah" class="catButton" type="button" onclick="showList(this);select(this)"> Kuliah </button></div>
+				<div><button id="Organisasi" class="catButton" type="button" onclick="showList(this);select(this)"> Organisasi </button></div>
+				<div><button id="Proyek" class="catButton" type="button" onclick="showList(this);select(this)"> Proyek </button></div>
+				<div id="tombolKategori"><button id="addCategory" class="catbutton" name="addKategori()" type="button" onclick="showCatForm()">Add Category</button></div>
+				<div id="category_new_form">
+					<form class="inputCategory" name="inputCategory">
+						Kategori<br> <input type="text" name="kategori"> <br>
+						User<br><input type="text" name="user"><br>
+						<input type="submit" value="submit" onclick="addCategory()">
+					</form>
+				</div>
+			</div>
+
+			<div id="kategoriContent">
+				<div class="task Kuliah" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()">
+				<p class="taskName">Bikin Genetic Algorithm AI</p>
+				<p class="taskClock">10:00 AM</p>
+				<p class="taskDate">22 February 2013</p>
+				<p class="taskTag">Tag : AI, Algoritma, Genetic Algorithm, Tubes</p>
+				</div>
+				<div class="task Organisasi" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Rapat Koordinasi</p>
+				<p class="taskClock">10:00 AM</p>
+				<p class="taskDate">23 February 2013</p>
+				<p class="taskTag">Tag : HMIF, SPARTA, lolwutt</p>
+				</div>
+				<div class="task Proyek" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Ketemu Client</p>
+				<p class="taskClock">1:00 PM</p>
+				<p class="taskDate">24 February 2013</p>
+				<p class="taskTag">Tag : Website design, proyek, uang, duit</p>
+				</div>
+				<div class="task Kuliah" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Kerjain tubes Progin</p>
+				<p class="taskClock">11:00 AM</p>
+				<p class="taskDate">25 February 2013</p>
+				<p class="taskTag">Tag : Progin, website, internet, tubes</p>
+				</div>
+				<div class="task Proyek" class="Progin" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> <p class="taskName">Bikin homepage</p>
+				<p class="taskClock">10:00 AM</p>
+				<p class="taskDate">26 February 2013</p>
+				<p class="taskTag">Tag : proyek, website design, homepage, uang, duit</p>
+				</div>
+				<div class="task Organisasi" onmouseover="mOverList(this)" onmouseout="mOutList(this)" onclick="redirect()"> 
+				<p class="taskName">Bersih-bersih sekre</p>
+				<p class="taskClock">09:00 AM</p>
+				<p class="taskDate">27 February 2013</p>
+				<p class="taskTag">Tag : HMIF, bersih, sekre</p>
+				</div>
+				<button id="addTask" class="button">Add Task</button>
+			</div>
+		</div =>
+		
+		<script>
+			
+			function mOverList(obj){
+				obj.style.backgroundColor="yellow";
+			}		
+			function mOutList(obj){
+				obj.style.backgroundColor="#f5fc8f";
+			}		
+			function redirect(){
+				window.location="http://www.google.com";
+			}
+			function showList(obj){
+				var allList=document.getElementsByClassName('task');
+				for (var i=0;i<allList.length;i++){
+					allList[i].style.display="none";
+				}
+				var selectedCat = obj.id;
+				var ListRPL=document.getElementsByClassName(selectedCat);
+				for (var i=0;i<ListRPL.length;i++){
+					ListRPL[i].style.display="block";
+				}
+				document.getElementById('addTask').style.display="block";
+			}
+			function showAll(){
+				var allList=document.getElementsByClassName('task');
+				for (var i=0;i<allList.length;i++){
+					allList[i].style.display="block";
+				}
+				document.getElementById('addTask').style.display="none";
+			}
+			
+			function select(obj){		
+				var arrayCatButt=document.getElementsByClassName('catButton');
+				for (var i=0;i<arrayCatButt.length;i++){
+					arrayCatButt[i].style.background="#a72323";
+				}
+				obj.style.background="#870101";
+			}		
+			function showCatForm(){
+				document.getElementById("category_new_form").style.display="block";
+			}
+			function addCategory(){
+				var newDiv = document.createElement('div');
+				var newButton = document.createElement("button");
+				var newCat=document.crateTextNode(document.inputCategory.kategori.value);
+				var coba=document.createTexkNode("hahahaha");
+				
+				
+				newButton.setAttribute('class', 'catButton');
+				newButton.setAttribute('type', 'button');
+				
+				newButton.appendChild(coba);
+				
+				div_cat_button = document.getElementById("coba");
+				document.body.insertBefore(newButton, div_cat_button);
+				
+			}
+		</script>
+		
+		<!-- Web Footer -->
+		
+		<div class="footer">
+			Copyright Nama Tim 2013
+		</div>
+	</body>
+</html>
